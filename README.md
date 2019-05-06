@@ -1617,6 +1617,9 @@ The following graphs represent the Average and the Median for both databases. Si
 
 <img src="https://waffleio-direct-uploads-production.s3.amazonaws.com/uploads/5b631124103d580013dcf6a4/125516c66e82c728ace21e0d46ed9893379182ba9bfcb945f61fbcd6395428792c07b7692ac7b62aba1b23030e5a48aa435e0d4dfcf8817da2e26a71d85e19f1c32f0e2a92624cf5f2d75dad0ba8218c4584b3b98d4dc4e8392ce3888c4b2c53.png" height="70%">
 
+| <p align="left">:tangerine: - The <b>orange</b> line represents the Neo4j median</br>:eggplant: - The <b>dark blue</b> line represents the MySQL median </p> | <p align="left">:apple: - The <b>red</b> bar represents the Neo4j average</br>:green_apple:- The <b>green</b> bar represents the MySQL average</p> |
+|-|-|
+
 </br>
 
 ### Time differences explanation
