@@ -256,7 +256,7 @@ To be able to run it you once again will need Python, and if you are running the
 
 These can normally be installed through the following commands:
 
-`pip install mysql-connector-python`
+`pip install mysql-connector-python`</br>
 `pip install neo4j`
 
 </br>
