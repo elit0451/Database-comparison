@@ -24,6 +24,9 @@ With this exercise we will execute a small experiment in which we will _compare 
 ----
 <a name="ex1"></a>
 ## Excercise 1 - Setup an SQL and a Neo4j database ![Generic badge](https://img.shields.io/badge/Setup-databases-informational.svg)
+To make following this README easier we would ask you to create a new folder in a location of your preference and then navigate to it within your shell/terminal.
+</br>
+
 To initialize the databases using Docker is quite **easy** by executing the following commands :whale::
 > Neo4j:
 ```c#
@@ -33,12 +36,16 @@ docker run -d --rm --name neo4j --publish=7474:7474 --publish=7687:7687 -v ${PWD
 </br>
 
 > MySQL:
+
+_NB_ :bangbang: _Be sure to create a `db_data` folder inside your current location_
+</br>
+
 ```c#
 docker run --rm --name my_mysql -d -v ${PWD}/db_data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql --max-allowed-packet=1073741824
 ```
 </br>
 
-It is important to notice that we have set the **heap max size** of Neo4j to **2GB** of memory to be sure we won’t have additional timings on our queries for RAM swapping. If you are a Windows user <img src="https://images.all-free-download.com/images/graphiclarge/windows_81_default_icon_pack_6830210.jpg" height="20" align="center">, execute the previous commands in PowerShell.
+It is important to notice that we have set the **heap max size** of Neo4j to **4GB** of memory to be sure we won’t have additional timings on our queries for RAM swapping. If you are a Windows user <img src="https://images.all-free-download.com/images/graphiclarge/windows_81_default_icon_pack_6830210.jpg" height="20" align="center">, execute the previous commands in PowerShell.
 </br>
 
 <p align="right">
@@ -51,7 +58,7 @@ It is important to notice that we have set the **heap max size** of Neo4j to **2
 
 _NB_ :bangbang: _The files mentioned in the following queries can be found in [here](https://github.com/datsoftlyngby/soft2019spring-databases/raw/master/data/archive_graph.tar.gz). Extract the file into a folder named **archive_graph**._
 
-We are starting to work with big files, and for this reason the importing had to be thought through. Due to the files being quite big, we have decided to provide the [script](./sqlDataScriptsGenerator.py) we used to build the SQL insertion queries instead of uploading them by themselves. Within this folder created on the previous step(“archive_graph”) you should place the two CSV files we got for the assignment, social_network_nodes.csv and social_network_edges.
+We are starting to work with big files, and for this reason the importing had to be thought through. Due to the files being quite big, we have decided to provide the [script](./sqlDataScriptsGenerator.py) we used to build the SQL insertion queries instead of uploading them by themselves.
 
 </br>
 
@@ -252,7 +259,7 @@ A program in Python <img src="https://www.python.org/static/opengraph-icon-200x2
 
 </br>
 
-To be able to run it you once again will need Python, and if you are running them within your computer (not through the following docker command) be sure to install the following packages for **python**, **mysql-connector-python** and **neo4j**. 
+To be able to run it you once again will need Python, and if you are running them within your computer (not through the following docker command) be sure to install the following packages for Python: **mysql-connector-python** and **neo4j**. 
 
 These can normally be installed through the following commands:
 
@@ -1617,9 +1624,6 @@ The following graphs represent the Average and the Median for both databases. Si
 
 <img src="https://waffleio-direct-uploads-production.s3.amazonaws.com/uploads/5b631124103d580013dcf6a4/125516c66e82c728ace21e0d46ed9893379182ba9bfcb945f61fbcd6395428792c07b7692ac7b62aba1b23030e5a48aa435e0d4dfcf8817da2e26a71d85e19f1c32f0e2a92624cf5f2d75dad0ba8218c4584b3b98d4dc4e8392ce3888c4b2c53.png" height="70%">
 
-| <p align="left">:tangerine: - The <b>orange</b> line represents the Neo4j median</br>:eggplant: - The <b>dark blue</b> line represents the MySQL median </p> | <p align="left">:apple: - The <b>red</b> bar represents the Neo4j average</br>:green_apple:- The <b>green</b> bar represents the MySQL average</p> |
-|:-:|:-:|
-
 </br>
 
 ### Time differences explanation
@@ -1631,7 +1635,7 @@ We have reached the conclusion that the time differences that occur are due to t
 </br>
 
 ### Conclusion
-It can be concluded that if you need to go to **shallow depths** (1 or 2 levels deep), **MySQL** might be a better choice regarding execution time. But the moment you want to start knowing the relations at **deeper depths Neo4j** takes the win and should definitely be the correct choice (at least between the two systems analysed in this assignment).
+It can be concluded that if you need to go to **shallow depths** (1 or 2 levels deep), **MySQL** might be a better choice regarding execution time. But the moment you want to start knowing the relations at **deeper depths**, **Neo4j** takes the win and should definitely be the correct choice (at least between the two systems analysed in this assignment).
 <br/>
 
 <p align="right">
