@@ -248,7 +248,7 @@ INNER JOIN Person ON Person.node_id = Knows.target_node_id;
 <a name="ex4"></a>
 ## Excercise 4 - Writing an execution program ![Generic badge](https://img.shields.io/badge/Execution-program-green.svg)
 
-A program in Python <img src="https://www.python.org/static/opengraph-icon-200x200.png" height="25"> was written where we can automatically execute the above queries for twenty random nodes against the two respective databases. It can be found in [databasePerformanceFinder.py](./databasePerformanceFinder.py)
+A program in Python <img src="https://www.python.org/static/opengraph-icon-200x200.png" height="25" align="center"> was written where we can automatically execute the above queries for twenty random nodes against the two respective databases. It can be found in [databasePerformanceFinder.py](./databasePerformanceFinder.py)
 
 </br>
 
