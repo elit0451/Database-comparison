@@ -2,7 +2,7 @@
 </br>
 
 In this repository <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/repository-15-834642.png" height="18"> we will bring into your attention a **MySQL** and a **Neo4j** database <img src="https://image.flaticon.com/icons/svg/148/148825.svg" height="18">. 
-</br>We will initialize the databases with data of an artificial social network <img src="https://trello-attachments.s3.amazonaws.com/5a0c1bbf93b2d2556f9cc845/5a1d5bbf034dbe3bcf832cf0/2c8f6c9ea06bcd9f7aa83a0b59827140/socialNetwork.png" height="40" align="center">. That network consists of persons <img src="https://trello-attachments.s3.amazonaws.com/5a0c1bbf93b2d2556f9cc845/5a1d5bbf034dbe3bcf832cf0/9e587ab061dd7797aebfb1be424eb8ce/people-icon-in-various-color-vector-21092005.jpg" height="20" align="center"> (users of a platform such as LinkedIn) and endorsements <img src="https://trello-attachments.s3.amazonaws.com/5a0c1bbf93b2d2556f9cc845/5a1d5bbf034dbe3bcf832cf0/ba9a3fe0f8b72850b2618876b000bdc0/blue-handshake-icon-flat-style-vector-11304772.jpg" height="20" align="center">(the acknowledgment of another person).
+</br>We will initialize the databases with data of an artificial social network <img src="https://waffleio-direct-uploads-production.s3.amazonaws.com/uploads/5b631124103d580013dcf6a4/125516c66e82c728ace21e0d46db978826878dba87e6ab03f60da1cd6416723e7952e37a23cbb07ff1112243434d0eee1e020a17b8eb8339a3e46979820e5ae8d76b5d72943411adb0d41beb57bb72895d99a4fedb1294b7607caddecd5d340c041083fe5830a7984fcb5ef442e74457b65e.png" height="40" align="center">. That network consists of persons <img src="https://trello-attachments.s3.amazonaws.com/5a0c1bbf93b2d2556f9cc845/5a1d5bbf034dbe3bcf832cf0/9e587ab061dd7797aebfb1be424eb8ce/people-icon-in-various-color-vector-21092005.jpg" height="20" align="center"> (users of a platform such as LinkedIn) and endorsements <img src="https://waffleio-direct-uploads-production.s3.amazonaws.com/uploads/5b631124103d580013dcf6a4/125516c66e82c728ace21e0d46db978826878dba87e6ab03f60da1cd6416723e7952e37a23cbb07ff1172d43434d0eee1e020a17b8eb8339a3e46979820e5ae8d76b5d72943411adb0d41beb57bb72895d99a4fedb1294b7607caddecd5d340c041083fe5830a7984fcb5ff74de74c53b65e.png" height="20" align="center">(the acknowledgment of another person).
 
 </br>
 
@@ -68,7 +68,8 @@ To import data to Neo4j the steps are a bit simpler, _“all”_ you have to do 
 
 ```javascript
 CREATE CONSTRAINT ON (p:Person) ASSERT p.node_id IS UNIQUE
-
+```
+```javascript
 USING PERIODIC COMMIT 1000
 LOAD CSV WITH HEADERS FROM "file:///archive_graph/social_network_nodes.csv" AS row 
     FIELDTERMINATOR ","
@@ -79,8 +80,8 @@ CREATE (p:Person {
     job: row["job"],
     birthday: row["birthday"]
     })
-
-
+```
+```javascript
 USING PERIODIC COMMIT 1000    
 LOAD CSV WITH HEADERS FROM "file:///archive_graph/social_network_edges.csv" AS row 
     FIELDTERMINATOR ","
@@ -1623,6 +1624,9 @@ The following graphs represent the Average and the Median for both databases. Si
 </br>
 
 <img src="https://waffleio-direct-uploads-production.s3.amazonaws.com/uploads/5b631124103d580013dcf6a4/125516c66e82c728ace21e0d46ed9893379182ba9bfcb945f61fbcd6395428792c07b7692ac7b62aba1b23030e5a48aa435e0d4dfcf8817da2e26a71d85e19f1c32f0e2a92624cf5f2d75dad0ba8218c4584b3b98d4dc4e8392ce3888c4b2c53.png" height="70%">
+
+| <p align="left">:tangerine: - The <b>orange</b> line represents the Neo4j median</br>:eggplant: - The <b>dark blue</b> line represents the MySQL median </p> | <p align="left">:apple: - The <b>red</b> bar represents the Neo4j average</br>:green_apple:- The <b>green</b> bar represents the MySQL average</p> |
+|:-:|:-:|
 
 </br>
 
