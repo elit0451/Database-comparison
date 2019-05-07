@@ -75,7 +75,7 @@ LOAD CSV WITH HEADERS FROM "file:///archive_graph/social_network_nodes.csv" AS r
     FIELDTERMINATOR ","
 WITH row
 CREATE (p:Person {
-    node_id:row["node_id"],
+    node_id:toInteger(row["node_id"]),
     name: row["name"],
     job: row["job"],
     birthday: row["birthday"]
@@ -86,7 +86,7 @@ USING PERIODIC COMMIT 1000
 LOAD CSV WITH HEADERS FROM "file:///archive_graph/social_network_edges.csv" AS row 
     FIELDTERMINATOR ","
 WITH row
-MATCH (person:Person {node_id:row["source_node_id"]}), (anotherPerson:Person {node_id:row["target_node_id"]})
+MATCH (person:Person {node_id:toInteger(row["source_node_id"])}), (anotherPerson:Person {node_id:toInteger(row["target_node_id"])})
 CREATE (person)-[:KNOWS]->(anotherPerson)
 ```
 
