@@ -286,7 +286,7 @@ docker run -it --rm --net=host -v ${PWD}:/tmp -w /tmp python sh -c "pip install 
 
 > Times of each query for each id
 
-Within this table you can find all the single execution results that were gathered to calculate the _average_ and the _median_ in the next section.
+Within this table you can find all the single execution results (in seconds) that were gathered to calculate the _average_ and the _median_ in the next section.
 
 <table>
     <tr>
@@ -1617,7 +1617,7 @@ Within this table you can find all the single execution results that were gather
 
 > Average & Median
 
-The following graphs represent the Average and the Median for both databases. Since the time difference are significant from depth 3+, we decided to split the graph into 2, therefore, getting a closer look.
+The following graphs represent the Average and the Median values (in seconds) for both databases. Since the time difference are significant from depth 3+, we decided to split the graph into 2, therefore, getting a closer look.
 
 <img src="https://waffleio-direct-uploads-production.s3.amazonaws.com/uploads/5b631124103d580013dcf6a4/125516c66e82c728ace21e0d46ed9893379182ba9bfcb945e611b2843b492d762a10e17132d0e12de61a79005a5948ae470a5644fdf1df2ff2e03d22884e17ff933c0120996048e6edc00db513bb29814e80b3bb8b48c0ec3827ee82875d73.png" height="70%">
 
